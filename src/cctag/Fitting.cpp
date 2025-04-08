@@ -5,22 +5,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
-#include <boost/algorithm/string/classification.hpp>
-#include <boost/algorithm/string/split.hpp>
-#include <boost/lexical_cast.hpp>
-#include <boost/math/constants/constants.hpp>
-#include <boost/math/special_functions/round.hpp>
-#include <boost/iterator/indirect_iterator.hpp>
-#include <cctag/EdgePoint.hpp>
-#include <cctag/Fitting.hpp>
-#include <cctag/utils/Defines.hpp>
-#include <Eigen/SVD>
-#include <Eigen/LU>
-#include <cctag/geometry/Ellipse.hpp>
-#include <cctag/geometry/Distance.hpp>
-#include <cctag/geometry/EllipseFromPoints.hpp>
-#include <cctag/geometry/Point.hpp>
-#include <cctag/Fitting.hpp>
+
 #include <cmath>
 #include <cfloat>
 #include <fstream>
@@ -29,7 +14,25 @@
 #include <cstdlib>
 #include <vector>
 #include <utility>
+ 
+#include <boost/algorithm/string/classification.hpp>
+#include <boost/algorithm/string/split.hpp>
+#include <boost/lexical_cast.hpp>
+#include <boost/math/constants/constants.hpp>
+#include <boost/math/special_functions/round.hpp>
+#include <boost/iterator/indirect_iterator.hpp>
+
+#include <Eigen/SVD>
+#include <Eigen/LU>
 #include <Eigen/Eigenvalues>
+
+#include "cctag/geometry/Ellipse.hpp"
+#include "cctag/geometry/Distance.hpp"
+#include "cctag/geometry/EllipseFromPoints.hpp"
+#include "cctag/geometry/Point.hpp"
+#include "cctag/Fitting.hpp"
+#include "cctag/EdgePoint.hpp"
+#include "cctag/Fitting.hpp"
 
 namespace cctag {
 namespace numerical {
@@ -107,10 +110,7 @@ static Conic fit_solver(It begin, It end)
   } C1;
   
   const auto offset = get_offset(begin, end);
-  const auto St = get_scatter_matrix(begin, end, offset);
-  const auto& S1 = std::get<0>(St);
-  const auto& S2 = std::get<1>(St);
-  const auto& S3 = std::get<2>(St);
+  const auto &[S1, S2, S3] = get_scatter_matrix(begin, end, offset);
   bool invertible;
   Matrix3f S3Inv;
   S3.computeInverseWithCheck(S3Inv, invertible);
@@ -118,15 +118,14 @@ static Conic fit_solver(It begin, It end)
   {
       throw std::domain_error("fit_solver: the input points appear to be linearly dependent");
   }
-  const auto T = -S3.inverse() * S2.transpose();
-  const auto M = C1.inverse * (S1 + S2*T);
+  const Matrix3f T = -S3.inverse() * S2.transpose();
+  const Matrix3f M = C1.inverse * (S1 + S2*T);
   
   EigenSolver<Matrix3f> M_ev(M);
   Vector3f cond;
   {
-    const auto evr_ = M_ev.eigenvectors();
-    const auto evr  = evr_.real().array();
-    cond = 4*evr.row(0)*evr.row(2) - evr.row(1)*evr.row(1);
+      const Array<float, 3, 3> evr = M_ev.eigenvectors().real().array();
+      cond = 4 * evr.row(0) * evr.row(2) - evr.row(1) * evr.row(1);
   }
 
   const auto eps = std::numeric_limits<float>::epsilon();

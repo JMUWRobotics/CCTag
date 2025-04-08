@@ -5,9 +5,9 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
-#include <cctag/CCTagMarkersBank.hpp>
-#include <cctag/utils/Exceptions.hpp>
-#include <cctag/utils/Defines.hpp>
+#include "cctag/CCTagMarkersBank.hpp"
+#include "cctag/utils/Exceptions.hpp"
+#include "cctag/utils/Defines.hpp"
 
 #include <boost/numeric/conversion/bounds.hpp>
 
@@ -24,7 +24,7 @@ CCTagMarkersBank::CCTagMarkersBank( std::size_t nCrowns )
   _markers.clear();
   if ( nCrowns == 3 )
   {
-    for(const auto & idThreeCrown : CCTagMarkersBank::idThreeCrowns)
+    for(const auto &idThreeCrown : CCTagMarkersBank::idThreeCrowns)
     {
       std::vector<float> line;
       line.reserve(5);

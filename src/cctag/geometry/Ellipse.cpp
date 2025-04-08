@@ -93,8 +93,8 @@ void Ellipse::setAngle( float angle )
 
 Ellipse Ellipse::transform(const Matrix& mT) const
 {
-  const auto a = mT.transpose() * _matrix;
-  auto mET = a * mT;
+  const Matrix a = mT.transpose() * _matrix;
+  Matrix mET = a * mT;
   //const Matrix a = prec_prod( boost::numeric::ublas::trans(mT), _matrix );
   //const Matrix mET = prec_prod( a, mT );
   return Ellipse( mET );
