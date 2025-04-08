@@ -12,7 +12,7 @@
 #include "frame.h"
 #include "triple_point.h"
 
-#include <random>
+#include <map>
 
 
 namespace cctag {

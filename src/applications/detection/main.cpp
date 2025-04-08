@@ -7,7 +7,6 @@
  */
 #include "CmdLine.hpp"
 #include "cctag/Detection.hpp"
-#include "cctag/utils/Exceptions.hpp"
 #include "cctag/utils/FileDebug.hpp"
 #include "cctag/utils/VisualDebug.hpp"
 

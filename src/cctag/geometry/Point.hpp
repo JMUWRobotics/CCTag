@@ -8,8 +8,6 @@
 #ifndef _CCTAG_POINT_HPP_
 #define	_CCTAG_POINT_HPP_
 
-#include <cctag/utils/Exceptions.hpp>
-
 #include <Eigen/Core>
 
 namespace cctag {

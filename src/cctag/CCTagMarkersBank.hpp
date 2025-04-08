@@ -8,15 +8,12 @@
 #ifndef VISION_MARKER_CCTAG_MARKERS_BANK_HPP
 #define	VISION_MARKER_CCTAG_MARKERS_BANK_HPP
 
-#include <boost/function.hpp>
-#include <boost/spirit/include/phoenix_core.hpp>
-#include <boost/spirit/include/phoenix_operator.hpp>
-#include <boost/spirit/include/phoenix_stl.hpp>
 #include <boost/spirit/include/qi.hpp>
+#include <boost/phoenix/stl.hpp>
+#include <boost/phoenix/core.hpp>
+#include <boost/phoenix/operator.hpp>
 
 #include <cstddef>
-#include <fstream>
-#include <iostream>
 #include <string>
 #include <vector>
 
@@ -43,7 +40,6 @@ private:
   bool cctagLineParse( Iterator first, Iterator last, std::vector<float>& rr )
   {
     float n;
-    using boost::phoenix::ref;
     using boost::phoenix::push_back;
     using namespace boost::spirit::qi;
     using boost::spirit::qi::_1;

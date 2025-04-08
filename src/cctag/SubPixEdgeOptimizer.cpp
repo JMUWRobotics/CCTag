@@ -5,18 +5,10 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
-#include <cctag/SubPixEdgeOptimizer.hpp>
-#include <cctag/ImageCut.hpp>
-#include <cctag/geometry/Distance.hpp>
-#include <cctag/utils/Exceptions.hpp>
-#include <cctag/utils/Defines.hpp>
+#include "cctag/SubPixEdgeOptimizer.hpp"
 
 #include <boost/math/constants/constants.hpp>
 #include <boost/math/special_functions/pow.hpp>
-
-#include <cmath>
-#include <cstddef>
-#include <ostream>
 
 namespace cctag {
 

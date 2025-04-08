@@ -5,9 +5,9 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
-#include <cctag/EdgePoint.hpp>
-#include <cctag/Bresenham.hpp>
-#include <cctag/utils/FileDebug.hpp>
+#include "cctag/EdgePoint.hpp"
+#include "cctag/Bresenham.hpp"
+#include "cctag/utils/FileDebug.hpp"
 
 #include <boost/math/special_functions/sign.hpp>
 

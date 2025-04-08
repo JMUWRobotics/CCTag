@@ -102,6 +102,7 @@ endif(APPLE)
 
 # FIND BOOST
 set(BOOST_REQUIRED_COMPONENTS "atomic;chrono;date_time;filesystem;program_options;serialization;system;thread;timer;math_c99")
+add_compile_definitions(BOOST_ALLOW_DEPRECATED_HEADERS) # TODO remove me and fix boost!!
 if(WIN32)
   set(BOOST_REQUIRED_COMPONENTS "${BOOST_REQUIRED_COMPONENTS};stacktrace_windbg")
 else()

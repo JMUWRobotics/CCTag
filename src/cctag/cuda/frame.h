@@ -14,14 +14,10 @@
 #include <opencv2/core/mat.hpp>
 #include <opencv2/core/cuda_types.hpp>
 
-#include "onoff.h"
-
 #include "cctag/Params.hpp"
 #include "cctag/Types.hpp"
-#include "cctag/ImageCut.hpp"
 #include "frame_07_vote.h"
 #include "triple_point.h"
-#include "cctag/cuda/geom_ellipse.h"
 #include "cctag/cuda/framemeta.h"
 #include "cctag/cuda/ptrstep.h"
 

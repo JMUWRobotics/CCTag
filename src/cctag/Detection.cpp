@@ -5,25 +5,21 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
-#include <cctag/utils/FileDebug.hpp>
-#include <cctag/EllipseGrowing.hpp>
-#include <cctag/Detection.hpp>
-#include <cctag/Vote.hpp>
-#include <cctag/utils/VisualDebug.hpp>
-#include <cctag/Multiresolution.hpp>
-#include <cctag/Fitting.hpp>
-#include <cctag/CCTagFlowComponent.hpp>
-#include <cctag/geometry/Point.hpp>
-#include <cctag/Statistic.hpp>
-#include <cctag/geometry/Ellipse.hpp>
-#include <cctag/geometry/EllipseFromPoints.hpp>
-#include <cctag/CCTag.hpp>
-#include <cctag/Identification.hpp>
-#include <cctag/Fitting.hpp>
-#include <cctag/Types.hpp>
-#include <cctag/Canny.hpp>
-#include <cctag/utils/Defines.hpp>
-#include <cctag/utils/Talk.hpp> // for DO_TALK macro
+#include "cctag/utils/FileDebug.hpp"
+#include "cctag/EllipseGrowing.hpp"
+#include "cctag/Detection.hpp"
+#include "cctag/Vote.hpp"
+#include "cctag/utils/VisualDebug.hpp"
+#include "cctag/Multiresolution.hpp"
+#include "cctag/geometry/Point.hpp"
+#include "cctag/Statistic.hpp"
+#include "cctag/geometry/Ellipse.hpp"
+#include "cctag/geometry/EllipseFromPoints.hpp"
+#include "cctag/CCTag.hpp"
+#include "cctag/Identification.hpp"
+#include "cctag/Types.hpp"
+#include "cctag/Canny.hpp"
+#include "cctag/utils/Talk.hpp" // for DO_TALK macro
 #ifdef CCTAG_WITH_CUDA
 #include "cctag/cuda/tag.h"
 #endif
@@ -37,15 +33,9 @@
 #include <boost/date_time/posix_time/posix_time.hpp>
 
 #include <cmath>
-#include <exception>
-#include <fstream>
-#include <list>
-#include <memory>
 #include <mutex>
-#include <sstream>
-#include <utility>
 #ifdef CCTAG_WITH_CUDA
-#include <cctag/cuda/cctag_cuda_runtime.h> // only for debugging
+#include "cctag/cuda/cctag_cuda_runtime.h" // only for debugging
 #endif // CCTAG_WITH_CUDA
 
 #include <tbb/tbb.h>
