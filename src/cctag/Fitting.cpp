@@ -124,7 +124,8 @@ static Conic fit_solver(It begin, It end)
   EigenSolver<Matrix3f> M_ev(M);
   Vector3f cond;
   {
-    const auto evr = M_ev.eigenvectors().real().array();
+    const auto evr_ = M_ev.eigenvectors();
+    const auto evr  = evr_.real().array();
     cond = 4*evr.row(0)*evr.row(2) - evr.row(1)*evr.row(1);
   }
 
