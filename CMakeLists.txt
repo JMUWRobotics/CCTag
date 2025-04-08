@@ -19,7 +19,6 @@ option(CCTAG_VISUAL_DEBUG "Enable visual debug" OFF)
 option(CCTAG_NO_COUT "Disable output stream" ON)
 option(CCTAG_WITH_CUDA "Compile the library with CUDA support" ON)
 option(CCTAG_BUILD_APPS "Build the sample applications" ON)
-option(CCTAG_CUDA_CC_CURRENT_ONLY "Set to on to build only for the current machine's CC" OFF)
 option(CCTAG_NVCC_WARNINGS "Switch on several additional warnings for CUDA nvcc." OFF)
 option(CCTAG_EIGEN_MEMORY_ALIGNMENT "Enable Eigen alignment" OFF)
 
@@ -124,7 +123,7 @@ if(CCTAG_BUILD_TESTS)
   include(BoostTestHelper)
 endif()
 
-find_package(Boost 1.66.0 REQUIRED COMPONENTS ${BOOST_REQUIRED_COMPONENTS})
+find_package(Boost CONFIG REQUIRED COMPONENTS ${BOOST_REQUIRED_COMPONENTS})
 message(STATUS "Found Boost: version ${Boost_VERSION}")
 
 if(BUILD_SHARED_LIBS)
@@ -135,7 +134,6 @@ if(BUILD_SHARED_LIBS)
 endif()
 
 if(CCTAG_WITH_CUDA)
-  set(CCTAG_MIN_CUDA_VERSION 9.0)
   message( STATUS "Try finding CUDA" )
   if(BUILD_SHARED_LIBS)
     message(STATUS "BUILD_SHARED_LIBS ON")
@@ -150,7 +148,7 @@ if(CCTAG_WITH_CUDA)
     set(CUDA_USE_STATIC_CUDA_RUNTIME ON)
   endif()
 
-  find_package(CUDA ${CCTAG_MIN_CUDA_VERSION} REQUIRED)
+  find_package(CUDAToolkit REQUIRED cudadevrt)
 
   include(CheckNvccCompilerFlag)
 
@@ -164,25 +162,6 @@ if(CCTAG_WITH_CUDA)
     set(CUDA_NVCC_FLAGS_DEBUG   "${CUDA_NVCC_FLAGS_DEBUG};-G;-g")
   else()
     message(STATUS "Building in release mode")
-  endif()
-
-  # if CCTAG_CUDA_CC_CURRENT_ONLY is specified only build for the current hardware architecture
-  if(CCTAG_CUDA_CC_CURRENT_ONLY)
-    set(CCTAG_CUDA_CC_LIST_BASIC Auto)
-    CUDA_SELECT_NVCC_ARCH_FLAGS(CCTAG_CUDA_GENCODE_FLAGS ${CCTAG_CUDA_CC_LIST_BASIC})
-  else()
-    # otherwise build for all the architectures that are compatible with the current version of CUDA
-    # or those that are provided by the user setting CCTAG_CUDA_CC_LIST
-    include(ChooseCudaCC)
-    if(NOT DEFINED CCTAG_CUDA_CC_LIST)
-      chooseCudaCC(CCTAG_CUDA_CC_LIST_BASIC
-                   CCTAG_CUDA_GENCODE_FLAGS
-                   MIN_CC 30
-                   MIN_CUDA_VERSION ${CCTAG_MIN_CUDA_VERSION})
-      set(CCTAG_CUDA_CC_LIST ${CCTAG_CUDA_CC_LIST_BASIC} CACHE STRING "CUDA CC versions to compile")
-    else()
-      getFlagsForCudaCCList(CCTAG_CUDA_CC_LIST CCTAG_CUDA_GENCODE_FLAGS)
-    endif()
   endif()
 
   list(APPEND CUDA_NVCC_FLAGS "${CCTAG_CUDA_GENCODE_FLAGS}")
@@ -217,13 +196,6 @@ if(CCTAG_WITH_CUDA)
     list(APPEND CUDA_NVCC_FLAGS -Xptxas --warn-on-spills)
   endif()
 
-  cuda_find_library_local_first(CUDA_CUDADEVRT_LIBRARY cudadevrt "\"cudadevrt\" library")
-
-  if( ( CUDA_VERSION VERSION_EQUAL "9.0" ) OR ( CUDA_VERSION VERSION_GREATER "9.0") )
-    set(CCTAG_HAVE_SHFL_DOWN_SYNC   1)
-  else()
-    set(CCTAG_HAVE_SHFL_DOWN_SYNC   0)
-  endif()
 else(CCTAG_WITH_CUDA)
   message( STATUS "Building without CUDA" )
 endif(CCTAG_WITH_CUDA)
