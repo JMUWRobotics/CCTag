@@ -7,14 +7,13 @@
  */
 #pragma once
 
-#include "cctag/cuda/onoff.h"
+#include "onoff.h"
 
-#include <string>
 #include <vector>
 #include <stdlib.h>
 #include <inttypes.h>
 #include <opencv2/core.hpp>
-#include <cctag/cuda/cctag_cuda_runtime.h>
+#include <cuda_runtime.h>
 
 #include "cctag/cuda/tag_threads.h"
 #include "cctag/cuda/tag_cut.h"

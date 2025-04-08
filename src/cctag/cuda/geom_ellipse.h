@@ -7,7 +7,7 @@
  */
 #pragma once
 
-#include <cctag/cuda/cctag_cuda_runtime.h>
+#include <cuda_runtime.h>
 #include "geom_matrix.h"
 
 namespace cctag {

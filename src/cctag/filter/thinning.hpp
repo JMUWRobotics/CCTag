@@ -10,7 +10,6 @@
 
 #include <opencv2/core.hpp>
 #include <boost/timer/timer.hpp>
-#include <iostream>
 
 
 namespace cctag {

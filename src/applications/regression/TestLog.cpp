@@ -21,6 +21,7 @@
 #include <opencv2/imgproc/types_c.h>
 
 #include "TestLog.h"
+#include "cctag/Detection.hpp"
 
 using namespace cctag;
 

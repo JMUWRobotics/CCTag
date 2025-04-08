@@ -8,12 +8,10 @@
 
 #include <cmath>
 #include <cfloat>
-#include <fstream>
 #include <cmath>
 #include <cstdio>
 #include <cstdlib>
 #include <vector>
-#include <utility>
  
 #include <boost/algorithm/string/classification.hpp>
 #include <boost/algorithm/string/split.hpp>

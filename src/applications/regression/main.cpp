@@ -8,8 +8,10 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+
 #include <boost/archive/xml_iarchive.hpp>
 #include <boost/program_options.hpp>
+
 #include "Regression.h"
 
 static std::string SourceDir;

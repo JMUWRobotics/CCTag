@@ -8,7 +8,7 @@
 #pragma once
 
 #include <list>
-#include <cctag/cuda/cctag_cuda_runtime.h>
+#include <cuda_runtime.h>
 
 using namespace std;
 

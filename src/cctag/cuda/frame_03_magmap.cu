@@ -5,8 +5,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
-#include <cctag/cuda/cctag_cuda_runtime.h>
-#include "debug_macros.hpp"
+#include <cuda_runtime.h>
 
 #include "frame.h"
 #include "frameparam.h"

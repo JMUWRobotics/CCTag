@@ -8,7 +8,6 @@
 #include <cctag/Level.hpp>
 #include <cctag/filter/cvRecode.hpp>
 #include <cctag/filter/thinning.hpp>
-#include "cctag/utils/Talk.hpp"
 #ifdef CCTAG_WITH_CUDA
 #include "cctag/cuda/tag.h"
 #endif

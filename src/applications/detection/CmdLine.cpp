@@ -7,8 +7,6 @@
  */
 #include <iostream>
 #include <string>
-#include <memory>
-
 
 #include "CmdLine.hpp"
 

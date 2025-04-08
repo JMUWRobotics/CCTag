@@ -6,8 +6,9 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
 #include "onoff.h"
+#include "cctag/cuda/assist.h"
 
-#include <cctag/cuda/cctag_cuda_runtime.h>
+#include <cuda_runtime.h>
 
 #include "frame.h"
 

@@ -9,7 +9,6 @@
 #define _CCTAG_MARKERS_TYPES_HPP_
 
 #include <memory>
-#include <new>
 #include <stdexcept>
 #include <cctag/EdgePoint.hpp>
 

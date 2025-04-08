@@ -12,7 +12,6 @@
 
 #include <opencv2/opencv.hpp>
 
-#include <cstdint>
 #include <cstddef>
 #include <vector>
 

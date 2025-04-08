@@ -74,19 +74,14 @@
 #define PCG_RAND_HPP_INCLUDED 1
 
 #include <algorithm>
-#include <cinttypes>
 #include <cstddef>
 #include <cstdlib>
 #include <cstring>
 #include <cassert>
-#include <limits>
 #include <iostream>
 #include <iterator>
 #include <type_traits>
 #include <utility>
-#include <locale>
-#include <new>
-#include <stdexcept>
 
 #ifdef _MSC_VER
     #pragma warning(disable:4146)

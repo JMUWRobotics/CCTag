@@ -7,10 +7,10 @@
  */
 #pragma once
 
-#include <cctag/cuda/cctag_cuda_runtime.h>
-#include <opencv2/core/cuda.hpp>
-
 #include "onoff.h"
+
+#include <cuda_runtime.h>
+#include <opencv2/core/cuda.hpp>
 
 namespace cv {
     namespace cuda {

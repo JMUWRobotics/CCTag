@@ -27,9 +27,6 @@
 #include <cstdlib>
 #include <cstring>
 #include <vector>
-#include <iostream>
-#include <iomanip>
-#include <fstream>
 #include <algorithm>
 #include <tuple>
 

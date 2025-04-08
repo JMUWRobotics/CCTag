@@ -7,7 +7,7 @@
  */
 #include "onoff.h"
 
-#include <cctag/cuda/cctag_cuda_runtime.h>
+#include <cuda_runtime.h>
 
 #include "frame.h"
 

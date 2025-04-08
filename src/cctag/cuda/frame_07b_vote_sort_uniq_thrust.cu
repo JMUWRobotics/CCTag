@@ -8,8 +8,7 @@
  */
 #include <cuda.h>
 
-#include <cctag/cuda/cctag_cuda_runtime.h>
-#include <limits>
+#include <cuda_runtime.h>
 #include <thrust/sort.h>
 #include <thrust/unique.h>
 #include <thrust/device_ptr.h>
@@ -18,7 +17,6 @@
 #include "debug_macros.hpp"
 #include "frame.h"
 #include "framemeta.h"
-#include "assist.h"
 
 using namespace std;
 

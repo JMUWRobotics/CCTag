@@ -18,8 +18,6 @@
 #ifndef Singleton_HPP
 #define Singleton_HPP
 
-#include <cstddef>
-
 template <class T>
 class Singleton
 {

@@ -22,6 +22,7 @@
 #include <boost/filesystem.hpp>
 #include <boost/ptr_container/ptr_list.hpp>
 #include <boost/timer/timer.hpp>
+
 #include <opencv2/core/core.hpp>
 #include <opencv2/imgproc/types_c.h>
 #include <opencv2/opencv.hpp>
@@ -33,7 +34,6 @@
 
 #include <tbb/tbb.h>
 
-#include <exception>
 #include <fstream>
 #include <iostream>
 #include <sstream>

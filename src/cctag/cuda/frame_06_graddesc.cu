@@ -5,10 +5,10 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
+#include "onoff.h"
+
 #include <iostream>
-#include <algorithm>
-#include <limits>
-#include <cctag/cuda/cctag_cuda_runtime.h>
+#include <cuda_runtime.h>
 #include <stdio.h>
 #include "debug_macros.hpp"
 #include "debug_is_on_edge.h"
@@ -16,7 +16,6 @@
 #include "frame.h"
 #include "frameparam.h"
 #include "assist.h"
-#include "onoff.h"
 
 using namespace std;
 

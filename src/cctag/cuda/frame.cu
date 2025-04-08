@@ -5,19 +5,15 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
-#include <iostream>
-#include <limits>
 #include <assert.h>
-#include <fstream>
 #include <string.h>
-#include <cctag/cuda/cctag_cuda_runtime.h>
+#include <cuda_runtime.h>
 #ifdef _MSC_VER
 #include <windows.h>
 #else
 #include <sys/mman.h>
 #endif
 #include "debug_macros.hpp"
-#include "pinned_counters.h"
 
 #include "frame.h"
 #include "cctag/utils/Talk.hpp"

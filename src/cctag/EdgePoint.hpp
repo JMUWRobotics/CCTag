@@ -11,7 +11,6 @@
 #include <cctag/geometry/Point.hpp>
 #include <cctag/utils/Defines.hpp>
 
-#include <cstddef>
 #include <sys/types.h>
 #include <cmath>
 #include <iosfwd>

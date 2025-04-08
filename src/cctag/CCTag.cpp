@@ -20,14 +20,11 @@
 #include <boost/array.hpp>
 #include <boost/mpl/bool.hpp>
 
-#include <cstddef>
 #include <cmath>
 #include <iomanip>
 
 namespace cctag
 {
-
-namespace optimization = cctag::numerical::optimization;
 
 const boost::array<float, 5> CCTag::_radiusRatiosInit =
 {

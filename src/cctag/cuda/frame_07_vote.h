@@ -7,17 +7,17 @@
  */
 #pragma once
 
-#include <cuda.h>
-
-#include <cctag/cuda/cctag_cuda_runtime.h>
-#include <opencv2/core/cuda_types.hpp>
-
 #include "onoff.h"
 
+#include <cuda.h>
+
+#include <cuda_runtime.h>
+#include <opencv2/core/cuda_types.hpp>
+
+#include "cctag/Params.hpp"
 #include "framemeta.h"
 #include "triple_point.h"
 #include "edge_list.h"
-#include "assist.h"
 
 namespace cv {
     namespace cuda {

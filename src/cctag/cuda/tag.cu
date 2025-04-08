@@ -9,14 +9,9 @@
 #include "frame.h"
 #include "frameparam.h"
 #include "debug_macros.hpp"
-#include "keep_time.hpp"
 #include "pinned_counters.h"
-#include <sstream>
 #include <iostream>
-#include <fstream>
 
-#include "debug_image.h"
-#include "cctag/utils/Talk.hpp"
 #include "geom_ellipse.h"
 
 #include "onoff.h"

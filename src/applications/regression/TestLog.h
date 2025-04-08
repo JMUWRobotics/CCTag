@@ -10,7 +10,8 @@
 #include <vector>
 #include <opencv2/core/mat.hpp>
 #include <boost/serialization/nvp.hpp>
-#include "cctag/Detection.hpp"
+
+#include "cctag/CCTag.hpp"
 #include "cctag/Params.hpp"
 
 // Contains cctag info that is compared during regression testing.

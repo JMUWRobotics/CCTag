@@ -5,21 +5,12 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
-#include <iostream>
-#include <algorithm>
-#include <limits>
 #include <assert.h>
-#include <fstream>
-#include <string.h>
-#include <cctag/cuda/cctag_cuda_runtime.h>
-#include <map>
-#include "debug_macros.hpp"
+#include <cuda_runtime.h>
 
 #include "frame.h"
 #include "debug_image.h"
 #include "edge_list.h"
-#include "cmp_list.h"
-#include "assist.h"
 
 #undef CHATTY_WRITE_DEBUG_PLANE
 

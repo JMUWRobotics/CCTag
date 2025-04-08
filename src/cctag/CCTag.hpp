@@ -13,7 +13,6 @@
 #include <cctag/Candidate.hpp>
 #include <cctag/CCTagFlowComponent.hpp>
 #include <cctag/geometry/Point.hpp>
-// #include <cctag/algebra/Invert.hpp>
 #include <cctag/geometry/Ellipse.hpp>
 #include <cctag/Types.hpp>
 #include <cctag/ICCTag.hpp>
@@ -35,7 +34,6 @@
 
 #include <algorithm>
 #include <cmath>
-#include <fstream>
 #include <vector>
 
 namespace cctag

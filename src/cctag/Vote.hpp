@@ -16,9 +16,10 @@
 
 #include <boost/container/flat_set.hpp>
 
+#include <opencv2/core/mat.hpp>
+
 #include <cstddef>
 #include <list>
-#include <utility>
 #include <vector>
 
 

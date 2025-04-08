@@ -10,7 +10,6 @@
 
 #include <cctag/geometry/Ellipse.hpp>
 #include <Eigen/Core>
-#include <vector>
 
 namespace cctag {
 namespace viewGeometry {

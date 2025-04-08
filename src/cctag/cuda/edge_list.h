@@ -7,9 +7,8 @@
  */
 #pragma once
 
-#include <cctag/cuda/cctag_cuda_runtime.h>
+#include <cuda_runtime.h>
 #include <iostream>
-#include <fstream>
 #include <vector>
 
 #include "triple_point.h"

@@ -8,12 +8,14 @@
 #pragma once
 
 #include <stdexcept>
+
 #include <boost/optional.hpp>
 #include <boost/filesystem.hpp>
 #include <boost/accumulators/accumulators.hpp>
 #include <boost/accumulators/statistics/stats.hpp>
 #include <boost/accumulators/statistics/mean.hpp>
 #include <boost/accumulators/statistics/variance.hpp>
+
 #include "TestLog.h"
 
 namespace bacc = boost::accumulators;

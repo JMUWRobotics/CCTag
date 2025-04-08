@@ -12,8 +12,6 @@
 #include <cctag/geometry/Ellipse.hpp>
 #include <cctag/geometry/Point.hpp>
 
-#include <list>
-#include <string>
 #include <vector>
 
 namespace cctag {

@@ -8,7 +8,7 @@
 #pragma once
 
 #include <vector>
-#include <cctag/cuda/cctag_cuda_runtime.h>
+#include <cuda_runtime.h>
 
 namespace cctag {
 

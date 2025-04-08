@@ -13,7 +13,6 @@
 #include <cctag/EllipseGrowing.hpp>
 #include <cctag/utils/FileDebug.hpp>
 #include <cctag/geometry/Point.hpp>
-// #include <cctag/algebra/Invert.hpp>
 #include <cctag/geometry/Distance.hpp>
 #include <cctag/geometry/EllipseFromPoints.hpp>
 #include <cctag/Statistic.hpp>

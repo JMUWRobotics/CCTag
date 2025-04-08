@@ -7,13 +7,13 @@
  */
 #pragma once
 
-#include <cctag/cuda/cctag_cuda_runtime.h>
-#include <iostream>
-#include <iomanip>
+#include <cuda_runtime.h>
 #include <string>
 #include <stdlib.h>
 #include <assert.h>
 #include <inttypes.h>
+// required as macros expand std::cerr
+#include <iostream>
 
 namespace cctag {
 

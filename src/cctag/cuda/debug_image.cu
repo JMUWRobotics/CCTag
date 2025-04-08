@@ -7,16 +7,15 @@
  */
 #include "debug_image.h"
 
-#include "frame.h"
 #include "assist.h"
 
+#include <iomanip>
 #include <iostream>
 #include <algorithm>
 #include <limits>
 #include <assert.h>
 #include <fstream>
 #include <string.h>
-#include <map>
 
 namespace cctag {
 
@@ -139,7 +138,7 @@ void DebugImage::writeASCII_T( const string& filename, const cv::cuda::PtrStepSz
         {
             int val = plane.ptr(y)[x];
             if( width != 0 )
-                of << setw(width) << val << " ";
+                of << std::setw(width) << val << " ";
             else
                 of << val << " ";
         }

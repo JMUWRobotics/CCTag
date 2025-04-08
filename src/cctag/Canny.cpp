@@ -7,8 +7,6 @@
  */
 #include <cctag/Canny.hpp>
 
-#include "utils/Defines.hpp"
-
 namespace cctag
 {
 

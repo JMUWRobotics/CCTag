@@ -30,19 +30,17 @@
  *        bound
  */
 
+#include <cstdint>
 #ifndef PCG_EXTRAS_HPP_INCLUDED
 #define PCG_EXTRAS_HPP_INCLUDED 1
 
-#include <cinttypes>
 #include <cstddef>
 #include <cstdlib>
 #include <cstring>
 #include <cassert>
-#include <limits>
 #include <iostream>
 #include <type_traits>
 #include <utility>
-#include <locale>
 #include <iterator>
 
 #ifdef __GNUC__

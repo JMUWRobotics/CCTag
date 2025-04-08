@@ -7,6 +7,8 @@
  */
 #pragma once
 
+#include <cuda_runtime.h>
+
 __device__ __host__
 inline int clamp( int val, int maxval )
 {
