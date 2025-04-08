@@ -21,12 +21,10 @@ option(CCTAG_WITH_CUDA "Compile the library with CUDA support" ON)
 option(CCTAG_BUILD_APPS "Build the sample applications" ON)
 option(CCTAG_NVCC_WARNINGS "Switch on several additional warnings for CUDA nvcc." OFF)
 option(CCTAG_EIGEN_MEMORY_ALIGNMENT "Enable Eigen alignment" OFF)
-
 option(CCTAG_USE_POSITION_INDEPENDENT_CODE "Generate position independent code." ON)
 option(CCTAG_ENABLE_SIMD_AVX2 "Enable AVX2 optimizations" OFF)
 option(CCTAG_BUILD_TESTS "Build the unity tests" ON)
 option(CCTAG_BUILD_DOC "Build documentation" OFF)
-option(CCTAG_NO_THRUST_COPY_IF "Do not use thrust::copy_if() on GPU. There may be a bug on CUDA 7 with GTX 980, 980Ti and 1080" OFF)
 option(BUILD_SHARED_LIBS "Build shared libraries" ON)
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${PROJECT_SOURCE_DIR}/cmake")
@@ -64,13 +62,6 @@ if(MSVC AND CMAKE_GENERATOR MATCHES "Ninja")
   endif()
   list(APPEND CUDA_NVCC_FLAGS   -Xcompiler ${CCTAG_MVSC_LINKER})
 endif()
-
-set(CCTAG_CXX_STANDARD 14)
-set(CMAKE_CXX_STANDARD ${CCTAG_CXX_STANDARD})
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_CUDA_STANDARD ${CCTAG_CXX_STANDARD})
-set(CMAKE_CUDA_STANDARD_REQUIRED ON)
-
 
 if(CCTAG_ENABLE_SIMD_AVX2)
   if(CMAKE_COMPILER_IS_GNUCXX OR (CMAKE_CXX_COMPILER_ID STREQUAL "Clang"))
@@ -167,7 +158,7 @@ if(CCTAG_WITH_CUDA)
   list(APPEND CUDA_NVCC_FLAGS "${CCTAG_CUDA_GENCODE_FLAGS}")
 
   if(NOT MSVC)
-    set(CUDA_NVCC_FLAGS         "${CUDA_NVCC_FLAGS};-std=c++${CCTAG_CXX_STANDARD}")
+    set(CUDA_NVCC_FLAGS         "${CUDA_NVCC_FLAGS}")
   endif()
   set(CUDA_NVCC_FLAGS         "${CUDA_NVCC_FLAGS};--default-stream;per-thread")
 
