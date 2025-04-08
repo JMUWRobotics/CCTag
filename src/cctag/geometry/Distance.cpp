@@ -89,7 +89,7 @@ __m256 distance_point_ellipse_avx2(const Eigen::Matrix3f& Q, __m256 x, __m256 y,
 }
 
 // Returns mask of valid distances based on n (valid range 1..7)
-std::pair<__m256, __m256> distance_point_ellipse_avx2(const Eigen::Matrix3f& Q, const Eigen::Vector3f* pts, const size_t n)
+auto distance_point_ellipse_avx2(const Eigen::Matrix3f& Q, const Eigen::Vector3f* pts, const size_t n)
 {
   static_assert(sizeof(pts[0]) == 12, "Invalid Vector3f size");
   static const __m256i index = _mm256_set_epi32(21, 18, 15, 12,  9,  6,  3,  0);
