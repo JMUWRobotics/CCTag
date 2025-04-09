@@ -10,8 +10,10 @@
 #include "cctag/utils/FileDebug.hpp"
 #include "cctag/utils/VisualDebug.hpp"
 
+#ifdef CCTAG_WITH_CUDA
 #include "cctag/cuda/debug_macros.hpp"
 #include "cctag/cuda/device_prop.hpp"
+#endif
 
 #include <boost/algorithm/string/case_conv.hpp>
 #include <boost/archive/xml_iarchive.hpp>
@@ -282,7 +284,9 @@ int main(int argc, char** argv)
         params.setDebugDir(cmdline._debugDir);
     }
 
+#ifdef CCTAG_WITH_CUDA
     cctag::device_prop_t deviceInfo(false);
+#endif
 
     bfs::path myPath(bfs::absolute(cmdline._filename));
     std::string ext(myPath.extension().string());
