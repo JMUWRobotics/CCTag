@@ -5,6 +5,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
+#include "cctag/geometry/Circle.hpp"
 #include "cctag/utils/FileDebug.hpp"
 #include "cctag/EllipseGrowing.hpp"
 #include "cctag/Detection.hpp"
@@ -35,7 +36,7 @@
 #include <cmath>
 #include <mutex>
 #ifdef CCTAG_WITH_CUDA
-#include "cctag/cuda/cctag_cuda_runtime.h" // only for debugging
+#include <cuda_runtime.h> // only for debugging
 #endif // CCTAG_WITH_CUDA
 
 #include <tbb/tbb.h>

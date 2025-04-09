@@ -24,8 +24,8 @@ inline Eigen::Matrix3f conditionerFromEllipse( const cctag::numerical::geometry:
 	static const float meanAB = (ellipse.a()+ellipse.b())/2.f;
 
 	//[ 2^(1/2)/a,         0, -(2^(1/2)*x0)/a]
-        //[         0, 2^(1/2)/a, -(2^(1/2)*y0)/a]
-        //[         0,         0,               1]
+    //[         0, 2^(1/2)/a, -(2^(1/2)*y0)/a]
+    //[         0,         0,               1]
 
 	res( 0, 0 ) = sqrt2 / meanAB;
 	res( 0, 1 ) = 0.f;

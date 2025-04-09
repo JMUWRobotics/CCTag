@@ -140,7 +140,9 @@ if(CCTAG_WITH_CUDA)
     set(CUDA_USE_STATIC_CUDA_RUNTIME ON)
   endif()
 
+  find_package(CUDA REQUIRED)
   find_package(CUDAToolkit REQUIRED cudadevrt)
+  add_compile_definitions(CCTAG_WITH_CUDA)
 
   include(CheckNvccCompilerFlag)
 
@@ -155,6 +157,9 @@ if(CCTAG_WITH_CUDA)
   else()
     message(STATUS "Building in release mode")
   endif()
+
+  set(CCTAG_CUDA_CC_LIST_BASIC Auto)
+  CUDA_SELECT_NVCC_ARCH_FLAGS(CCTAG_CUDA_GENCODE_FLAGS ${CCTAG_CUDA_CC_LIST_BASIC})
 
   list(APPEND CUDA_NVCC_FLAGS "${CCTAG_CUDA_GENCODE_FLAGS}")
 
@@ -241,9 +246,6 @@ message(STATUS "Build applications: " ${CCTAG_BUILD_APPS})
 message(STATUS "Build tests: " ${CCTAG_BUILD_TESTS})
 message(STATUS "Build documentation: " ${CCTAG_BUILD_DOC})
 message(STATUS "Cuda support: " ${CCTAG_WITH_CUDA})
-if(CCTAG_WITH_CUDA)
-  message(STATUS "Compiling for CUDA CCs: ${CCTAG_CUDA_GENCODE_FLAGS}")
-endif()
 message(STATUS "Enable Eigen alignment: " ${CCTAG_EIGEN_MEMORY_ALIGNMENT})
 message(STATUS "Enable AVX2 optimizations: " ${CCTAG_ENABLE_SIMD_AVX2})
 message(STATUS "[debug] Serialize all the output: " ${CCTAG_SERIALIZE})

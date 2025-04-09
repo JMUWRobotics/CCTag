@@ -10,10 +10,8 @@
 #include "cctag/utils/FileDebug.hpp"
 #include "cctag/utils/VisualDebug.hpp"
 
-#ifdef CCTAG_WITH_CUDA
 #include "cctag/cuda/debug_macros.hpp"
 #include "cctag/cuda/device_prop.hpp"
-#endif // CCTAG_WITH_CUDA
 
 #include <boost/algorithm/string/case_conv.hpp>
 #include <boost/archive/xml_iarchive.hpp>
@@ -270,7 +268,6 @@ int main(int argc, char** argv)
         bank = CCTagMarkersBank(cmdline._cctagBankFilename);
     }
 
-#ifdef CCTAG_WITH_CUDA
     if(cmdline._useCuda)
     {
         params.setUseCuda(true);
@@ -286,7 +283,6 @@ int main(int argc, char** argv)
     }
 
     cctag::device_prop_t deviceInfo(false);
-#endif // CCTAG_WITH_CUDA
 
     bfs::path myPath(bfs::absolute(cmdline._filename));
     std::string ext(myPath.extension().string());

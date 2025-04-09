@@ -37,12 +37,10 @@ CmdLine::CmdLine( ) :
              "will be saved instead with the #s representing the zero-padded frame number, either in the current directory "
              "or in the directory given by --output.")
         ("show-unreliable,u", bool_switch(&_showUnreliableDetections), "Show the unreliable tags (marker id = -1)")
-#ifdef CCTAG_WITH_CUDA
         ("sync", bool_switch(&_switchSync), "CUDA debug option, run all CUDA ops synchronously")
         ("use-cuda", bool_switch(&_useCuda), "Select GPU code instead of CPU code")
         ("debug-dir", value<std::string>(&_debugDir)->default_value(_debugDir), "Path storing image to debug intermediate GPU results")
         ("parallel", value<int>(&_parallel)->default_value(_parallel), "Use <n> CUDA pipes concurrently (default 1)")
-#endif
             ;
 
     _allParams.add(required).add(optional);

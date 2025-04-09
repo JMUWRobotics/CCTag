@@ -5,29 +5,25 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
-#include <cctag/Multiresolution.hpp>
-#include <cctag/utils/VisualDebug.hpp>
-#include <cctag/utils/FileDebug.hpp>
-#include <cctag/Vote.hpp>
-#include <cctag/EllipseGrowing.hpp>
-#include <cctag/geometry/EllipseFromPoints.hpp>
-#include <cctag/Fitting.hpp>
-#include <cctag/Canny.hpp>
-#include <cctag/Detection.hpp>
-#include <cctag/utils/Talk.hpp> // for DO_TALK macro
+#include "cctag/Multiresolution.hpp"
+#include "cctag/utils/VisualDebug.hpp"
+#include "cctag/utils/FileDebug.hpp"
+#include "cctag/Vote.hpp"
+#include "cctag/EllipseGrowing.hpp"
+#include "cctag/geometry/EllipseFromPoints.hpp"
+#include "cctag/Fitting.hpp"
+#include "cctag/Canny.hpp"
+#include "cctag/Detection.hpp"
+#include "cctag/utils/Talk.hpp" // for DO_TALK macro
 
 #include <boost/timer/timer.hpp>
 #include <boost/date_time/posix_time/posix_time.hpp>
 
 #include <cmath>
 #include <sstream>
-#include <fstream>
-#include <map>
-
-#include <limits>
 
 #ifdef CCTAG_WITH_CUDA
-#include <cctag/cuda/cctag_cuda_runtime.h> // only for debugging!!!
+#include <cuda_runtime.h> // only for debugging!!!
 #include "cctag/cuda/tag.h"
 #endif
 

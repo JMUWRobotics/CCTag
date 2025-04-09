@@ -23,12 +23,10 @@ class CmdLine
     std::string _outputFolderName{};
     bool _saveDetectedImage{false};
     bool _showUnreliableDetections{false};
-#ifdef CCTAG_WITH_CUDA
     bool _switchSync{false};
     std::string _debugDir{};
     bool _useCuda{false};
     int _parallel{1};
-#endif
 
     CmdLine();
 

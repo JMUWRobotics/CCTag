@@ -8,11 +8,9 @@
 #ifndef VISION_CCTAG_MULTIRESOLUTION_HPP_
 #define VISION_CCTAG_MULTIRESOLUTION_HPP_
 
-#include <cctag/CCTag.hpp>
-#include <cctag/Params.hpp>
-#include <cctag/geometry/Ellipse.hpp>
-#include <cctag/geometry/Circle.hpp>
-#include <cctag/ImagePyramid.hpp>
+#include "cctag/CCTag.hpp"
+#include "cctag/Params.hpp"
+#include "cctag/ImagePyramid.hpp"
 #ifdef CCTAG_WITH_CUDA
 #include "cctag/cuda/tag.h"
 #endif
@@ -20,7 +18,6 @@
 
 #include <cstddef>
 #include <cmath>
-#include <vector>
 
 namespace cctag {
 
